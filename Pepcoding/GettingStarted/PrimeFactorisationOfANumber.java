@@ -27,42 +27,30 @@ Sample Output
 
 */
 class Solution {
-    public void printGcdAndLcm(int n1, int n2) {
+    public void printPrimeFactorisationOfANumber(int n) {
         
-        // Find GCD 
-        
-        int num1 = n1;
-        int num2 = n2;
-
-        while(num2%num1 !=0){
-            int r = num2%num1;
-            num2 = num1;
-            num1 = r;
+        for (int counter = 2; counter*counter <= n; counter++){
+            if (n % counter == 0){
+                System.out.print(counter+" ");
+                n /= counter;
+            }
+            
         }
-
-        int GCD = num1;
-
-        // LCM = n1 * n2 / GCD
-
-        int LCM = (n1 * n2) / GCD;
-
-        System.out.println(GCD);
-        System.out.println(LCM);
-
+        
+        if (n != 1){
+            System.out.print(n);
+        }
+        
+       
     }
 }
 
 
-class GcdAndLcm{
+class PrimeFactorisationOfANumber{
     public static void main(String[] args) {
         Solution obj = new Solution();
-        
-        
-
-        int n1 = 36;
-        int n2 = 24;
-        
-        obj.printGcdAndLcm(n1,n2);
+        int n = 1440;
+        obj.printPrimeFactorisationOfANumber(n);
 
         
         
