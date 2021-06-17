@@ -1,4 +1,4 @@
-SumOfTwoArrays
+
 
 /* 
 1.You are given a number n, representing the size of array a.
