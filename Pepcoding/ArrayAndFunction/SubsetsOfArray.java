@@ -35,3 +35,74 @@ Sample Output
 
 */
 
+import java.io.*;
+import java.util.*;
+
+public class SubsetOfArray{
+
+public static void main(String[] args) throws Exception {
+    // write your code here
+    
+        Scanner scn = new Scanner(System.in);
+        int n = scn.nextInt();
+        int[] arr = new int[n];
+        for (int i = 0; i< n; i++){
+            arr[i]= scn.nextInt();
+        }
+        
+        int len = arr.length;
+        
+        
+        
+        for (int i = 0; i < (int)Math.pow(2,len);i++){
+            
+            int bn = dTob(i);
+            int p = (int)Math.pow(10,len-1);
+            for(int j=0;j<len;j++){
+                
+               int cd = bn/p;
+                  bn = bn%p;
+                  
+                  if(cd == 0){
+                    System.out.print("-\t");  
+                  }
+                  else{
+                     System.out.print(arr[j]+"\t"); 
+                  }
+                  p /=10;
+              
+             
+              
+              
+              
+                
+            }
+            System.out.println();
+        
+    }
+    
+    
+    
+    
+    
+ }
+
+    public static int dTob(int n){
+        
+       int bn = 0;
+       int p = 1;
+        while(n != 0){
+        
+        int r = n%2;
+        n /= 2;
+        
+        bn += r *p;
+        p *=10;
+        
+            
+        }
+        
+        return bn;
+    }
+
+}
